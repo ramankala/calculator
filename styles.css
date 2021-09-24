@@ -1,0 +1,23 @@
+.container{
+    display: flex;
+    flex-direction: column;
+}
+.display{
+    display:flex;
+    justify-content: flex-end;
+    border: 2px solid black;
+    height: 20px;
+    width: 90px;
+}
+#first-row{
+    display:flex;
+}
+#second-row{
+    display:flex;
+}
+#third-row{
+    display:flex;
+}
+#fourth-row{
+    display:flex;
+}

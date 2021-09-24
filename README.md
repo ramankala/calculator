@@ -6,4 +6,10 @@ Version 1
 [x] Create multiply function.
 [x] Create divide function.
 [x] Create operate button.
-[] Create basic HTML calculator, each button should have a digit and operator, and equals key.
+
+Version 2
+[x] Create basic HTML calculator, each button should have a digit and operator, and equals key.
+[x] Create functions that populate the display when you click the number buttons.
+
+Version 3
+[] Make the Calculator work.
