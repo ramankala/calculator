@@ -12,4 +12,7 @@ Version 2
 [x] Create functions that populate the display when you click the number buttons.
 
 Version 3
-[] Make the Calculator work.
+[x] Make the Calculator work.
+
+Version 4
+[] Users should be able to string together several operations and get the right answer.

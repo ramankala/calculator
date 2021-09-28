@@ -25,112 +25,147 @@ let op1;
 let op2;
 let operator;
 let result;
+let flag = 0;
 
 sevenBtn.addEventListener('click', function(){
-    display.textContent = "7";
-    if (op1 == null){
-        op1 = 7;
+    if ((display.textContent == '+') || (display.textContent == '-') ||
+    (display.textContent == 'x') || (display.textContent == '/')){
+        display.textContent = "7";
+
     }
-    else{
-        op2 = 7;
+    else {
+        display.textContent += "7";
     }
+
+    // if ((op1 == null)){
+    //     op1 = display.textContent;
+    //     console.log("op1", op1);
+    // }
+    // else{
+    //     op2 = display.textContent;
+    //     console.log("op2", op2);
+    // }
+    
+
 });
 eightBtn.addEventListener('click', function(){
-    display.textContent = "8";
-    if (op1 == null){
-        op1 = 8;
+    if ((display.textContent == '+') || (display.textContent == '-') ||
+    (display.textContent == 'x') || (display.textContent == '/')){
+        display.textContent = "8";
     }
-    else{
-        op2 = 8;
+    else {
+        display.textContent += "8";
     }
+
 });
 nineBtn.addEventListener('click', function(){
-    display.textContent = "9";
-    if (op1 == null){
-        op1 = 9;
+    if ((display.textContent == '+') || (display.textContent == '-') ||
+    (display.textContent == 'x') || (display.textContent == '/')){
+        display.textContent = "9";
     }
-    else{
-        op2 = 9;
+    else {
+        display.textContent += "9";
     }
+
 });
 divisionBtn.addEventListener('click', function(){
+    op1 = display.textContent;
     display.textContent = "/";
-    operand = "/";
+    operator = "/";
 });
 fourBtn.addEventListener('click', function(){
-    display.textContent = "4";
-    if (op1 == null){
-        op1 = 4;
+    if ((display.textContent == '+') || (display.textContent == '-') ||
+    (display.textContent == 'x') || (display.textContent == '/')){
+        display.textContent = "4";
     }
-    else{
-        op2 = 4;
+    else {
+        display.textContent += "4";
     }
+
 });
 fiveBtn.addEventListener('click', function(){
-    display.textContent = "5";
-    if (op1 == null){
-        op1 = 5;
+    if ((display.textContent == '+') || (display.textContent == '-') ||
+    (display.textContent == 'x') || (display.textContent == '/')){
+        display.textContent = "5";
     }
-    else{
-        op2 = 5;
+    else {
+        display.textContent += "5";
     }
+
 });
 sixBtn.addEventListener('click', function(){
-    display.textContent = "6";
-    if (op1 == null){
-        op1 = 6;
+    if ((display.textContent == '+') || (display.textContent == '-') ||
+    (display.textContent == 'x') || (display.textContent == '/')){
+        display.textContent = "6";
     }
-    else{
-        op2 = 6;
+    else {
+        display.textContent += "6";
     }
+
 });
 multiplyBtn.addEventListener('click', function(){
+    op1 = display.textContent;
     display.textContent = "x";
-    operand = "*";
+    operator = "*";
 });
 oneBtn.addEventListener('click', function(){
-    display.textContent = "1";
-    if (op1 == null){
-        op1 = 1;
+    if ((display.textContent == '+') || (display.textContent == '-') ||
+    (display.textContent == 'x') || (display.textContent == '/')){
+        display.textContent = "1";
     }
-    else{
-        op2 = 1;
+    else {
+        display.textContent += "1";
     }
+
 });
 twoBtn.addEventListener('click', function(){
-    display.textContent = "2";
-    if (op1 == null){
-        op1 = 2;
+    if ((display.textContent == '+') || (display.textContent == '-') ||
+    (display.textContent == 'x') || (display.textContent == '/')){
+        display.textContent = "2";
     }
-    else{
-        op2 = 2;
+    else {
+        display.textContent += "2";
     }
+
 });
 threeBtn.addEventListener('click', function(){
-    display.textContent = "3";
-    if (op1 == null){
-        op1 = 3;
+    if ((display.textContent == '+') || (display.textContent == '-') ||
+    (display.textContent == 'x') || (display.textContent == '/')){
+        display.textContent = "3";
     }
-    else{
-        op2 = 3;
+    else {
+        display.textContent += "3";
     }
+
 });
 minusBtn.addEventListener('click', function(){
+    op1 = display.textContent;
     display.textContent = "-";
-    operand = "-";
+    operator = "-";
 });
 zeroBtn.addEventListener('click', function(){
-    display.textContent = "0";
-    if (op1 == null){
-        op1 = 0;
+    if ((display.textContent == '+') || (display.textContent == '-') ||
+    (display.textContent == 'x') || (display.textContent == '/')){
+        display.textContent = "0";
     }
-    else{
-        op2 = 0;
+    else {
+        display.textContent += "0";
     }
+
 });
 addBtn.addEventListener('click', function(){
+    // flag += 1;
+    // if (!(flag % 2 == 0)){
+    //     op1 = parseInt(display.textContent);
+    // }
+    // else {
+    //     op2 = parseInt(display.textContent);
+    // }
+    op1 = parseInt(display.textContent);
     display.textContent = "+";
-    operand = "+";
+    operator = "+";
+
+
 });
 equalBtn.addEventListener('click', function(){
     
@@ -138,7 +173,20 @@ equalBtn.addEventListener('click', function(){
     //string the values and operator in a variable
     //pass the variables in operate()
 
-    result = operate(op1, op2, operand);
+    // let arr = display.textContent.split('+')
+    // console.log("display arr:", arr);
+
+    // op1 = arr[0];
+    // operand = arr[1];
+    // op2 = arr[2];
+
+    op2 = parseInt(display.textContent);
+    console.log("op2:", op2);
+
+
+    
+
+    result = operate(op1, op2, operator);
 
     console.log(op1);
     console.log(op2);
@@ -192,4 +240,4 @@ function operate (a,b,op){
     }
 }
 
-//FIX can't do double or triple digit numbers
+//FIX can't string operators
