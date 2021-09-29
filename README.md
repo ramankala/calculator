@@ -17,4 +17,8 @@ Version 3
 Version 4
 [x] Users should be able to string together several operations and get the right answer.
 
+This final project in the Foundations track of the Odin Project has tied together everything I've learned about HTML, CSS, and JavaScript.  It pushed what I knew thus far into making this project which was not as simple as it seems.  The JavaScript logic gave me some difficulty in applying multiple operations, for example "12+7-5*3".  To use this application is simple, it functions the same way as a regular calculator and performs the same functions.  
 
+Link to the live demo is here:
+
+https://ramankala.github.io/calculator/
