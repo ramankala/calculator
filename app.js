@@ -2,7 +2,7 @@ const container = document.querySelector('#container');
 
 const display = document.querySelector('#display');
 display.classList.toggle('display');
-// display.textContent="1234";
+
 
 const sevenBtn = document.querySelector('#seven');
 const eightBtn = document.querySelector('#eight');
@@ -25,174 +25,231 @@ let op1;
 let op2;
 let operator;
 let result;
-let flag = 0;
+let flag = false;
 
 sevenBtn.addEventListener('click', function(){
-    if ((display.textContent == '+') || (display.textContent == '-') ||
-    (display.textContent == 'x') || (display.textContent == '/')){
+    if (!(op1 == null) && (display.textContent == '+') || (display.textContent == '-') ||
+    (display.textContent == 'x') || (display.textContent == '/') || flag == true){
         display.textContent = "7";
-
+        op2 = parseInt(display.textContent);
+        flag = false;
     }
     else {
         display.textContent += "7";
+        op2 = parseInt(display.textContent);
     }
-
-    // if ((op1 == null)){
-    //     op1 = display.textContent;
-    //     console.log("op1", op1);
-    // }
-    // else{
-    //     op2 = display.textContent;
-    //     console.log("op2", op2);
-    // }
     
 
 });
 eightBtn.addEventListener('click', function(){
-    if ((display.textContent == '+') || (display.textContent == '-') ||
-    (display.textContent == 'x') || (display.textContent == '/')){
+    if (!(op1 == null) && (display.textContent == '+') || (display.textContent == '-') ||
+    (display.textContent == 'x') || (display.textContent == '/') || flag == true){
         display.textContent = "8";
+        op2 = parseInt(display.textContent);
+        flag = false;
     }
     else {
         display.textContent += "8";
+        op2 = parseInt(display.textContent);
     }
 
 });
 nineBtn.addEventListener('click', function(){
-    if ((display.textContent == '+') || (display.textContent == '-') ||
-    (display.textContent == 'x') || (display.textContent == '/')){
+    if (!(op1 == null) && (display.textContent == '+') || (display.textContent == '-') ||
+    (display.textContent == 'x') || (display.textContent == '/') || flag == true){
         display.textContent = "9";
+        op2 = parseInt(display.textContent);
+        flag = false;
     }
     else {
         display.textContent += "9";
+        op2 = parseInt(display.textContent);
     }
 
 });
 divisionBtn.addEventListener('click', function(){
-    op1 = display.textContent;
-    display.textContent = "/";
-    operator = "/";
+    
+    if (!(op1 == null) && !(op2 == null)){
+        result = operate(op1, op2, operator);
+        result = Math.round(result * 100) / 100;
+        op1 = result;
+        op2 = null;
+        flag = true;
+        display.textContent = result;
+        operator = "/";
+    }
+    else{
+        op1 = parseInt(display.textContent);
+        display.textContent = "/";
+        operator = display.textContent;
+
+    }
 });
 fourBtn.addEventListener('click', function(){
-    if ((display.textContent == '+') || (display.textContent == '-') ||
-    (display.textContent == 'x') || (display.textContent == '/')){
+    if (!(op1 == null) && (display.textContent == '+') || (display.textContent == '-') ||
+    (display.textContent == 'x') || (display.textContent == '/') || flag == true){
         display.textContent = "4";
+        op2 = parseInt(display.textContent);
+        flag = false;
     }
     else {
         display.textContent += "4";
+        op2 = parseInt(display.textContent);
     }
 
 });
 fiveBtn.addEventListener('click', function(){
-    if ((display.textContent == '+') || (display.textContent == '-') ||
-    (display.textContent == 'x') || (display.textContent == '/')){
+    if (!(op1 == null) && (display.textContent == '+') || (display.textContent == '-') ||
+    (display.textContent == 'x') || (display.textContent == '/') || flag == true){
         display.textContent = "5";
+        op2 = parseInt(display.textContent);
+        flag = false;
     }
     else {
         display.textContent += "5";
+        op2 = parseInt(display.textContent);
     }
 
 });
 sixBtn.addEventListener('click', function(){
-    if ((display.textContent == '+') || (display.textContent == '-') ||
-    (display.textContent == 'x') || (display.textContent == '/')){
+    if (!(op1 == null) && (display.textContent == '+') || (display.textContent == '-') ||
+    (display.textContent == 'x') || (display.textContent == '/') || flag == true){
         display.textContent = "6";
+        op2 = parseInt(display.textContent);
+        flag = false;
     }
     else {
         display.textContent += "6";
+        op2 = parseInt(display.textContent);
     }
 
 });
 multiplyBtn.addEventListener('click', function(){
-    op1 = display.textContent;
-    display.textContent = "x";
-    operator = "*";
+    
+    if (!(op1 == null) && !(op2 == null)){
+        result = operate(op1, op2, operator);
+        result = Math.round(result * 100) / 100;
+        op1 = result;
+        op2 = null;
+        flag = true;
+        display.textContent = result;
+        operator = "*";
+    }
+    else{
+        op1 = parseInt(display.textContent);
+        display.textContent = "*";
+        operator = display.textContent;
+
+    }
 });
 oneBtn.addEventListener('click', function(){
-    if ((display.textContent == '+') || (display.textContent == '-') ||
-    (display.textContent == 'x') || (display.textContent == '/')){
+    if (!(op1 == null) && (display.textContent == '+') || (display.textContent == '-') ||
+    (display.textContent == 'x') || (display.textContent == '/') || flag == true){
         display.textContent = "1";
+        op2 = parseInt(display.textContent);
+        flag = false;
     }
     else {
         display.textContent += "1";
+        op2 = parseInt(display.textContent);
     }
 
 });
 twoBtn.addEventListener('click', function(){
-    if ((display.textContent == '+') || (display.textContent == '-') ||
-    (display.textContent == 'x') || (display.textContent == '/')){
+    if (!(op1 == null) && (display.textContent == '+') || (display.textContent == '-') ||
+    (display.textContent == 'x') || (display.textContent == '/') || flag == true){
         display.textContent = "2";
+        op2 = parseInt(display.textContent);
+        flag = false;
     }
     else {
         display.textContent += "2";
+        op2 = parseInt(display.textContent);
     }
 
 });
 threeBtn.addEventListener('click', function(){
-    if ((display.textContent == '+') || (display.textContent == '-') ||
-    (display.textContent == 'x') || (display.textContent == '/')){
+    if (!(op1 == null) && (display.textContent == '+') || (display.textContent == '-') ||
+    (display.textContent == 'x') || (display.textContent == '/') || flag == true){
         display.textContent = "3";
+        op2 = parseInt(display.textContent);
+        flag = false;
     }
     else {
         display.textContent += "3";
+        op2 = parseInt(display.textContent);
     }
 
 });
 minusBtn.addEventListener('click', function(){
-    op1 = display.textContent;
-    display.textContent = "-";
-    operator = "-";
+    
+    if (!(op1 == null) && !(op2 == null)){
+        result = operate(op1, op2, operator);
+        result = Math.round(result * 100) / 100;
+        op1 = result;
+        op2 = null;
+        flag = true;
+        display.textContent = result;
+        operator = "-";
+    }
+    else{
+        op1 = parseInt(display.textContent);
+        display.textContent = "-";
+        operator = display.textContent;
+
+    }
 });
 zeroBtn.addEventListener('click', function(){
-    if ((display.textContent == '+') || (display.textContent == '-') ||
-    (display.textContent == 'x') || (display.textContent == '/')){
+    if (!(op1 == null) && (display.textContent == '+') || (display.textContent == '-') ||
+    (display.textContent == 'x') || (display.textContent == '/') || flag == true){
         display.textContent = "0";
+        op2 = parseInt(display.textContent);
+        flag = false;
     }
     else {
         display.textContent += "0";
+        op2 = parseInt(display.textContent);
     }
 
 });
 addBtn.addEventListener('click', function(){
-    // flag += 1;
-    // if (!(flag % 2 == 0)){
-    //     op1 = parseInt(display.textContent);
-    // }
-    // else {
-    //     op2 = parseInt(display.textContent);
-    // }
-    op1 = parseInt(display.textContent);
-    display.textContent = "+";
-    operator = "+";
+    
+    
+    if (!(op1 == null) && !(op2 == null)){
+        result = operate(op1, op2, operator);
+        result = Math.round(result * 100) / 100;
+        op1 = result;
+        op2 = null;
+        flag = true;
+        display.textContent = result;
+        operator = "+";
+    }
+    else{
+        op1 = parseInt(display.textContent);
+        display.textContent = "+";
+        operator = display.textContent;
+
+    }
+
+    
 
 
 });
 equalBtn.addEventListener('click', function(){
-    
-    //parse string
-    //string the values and operator in a variable
-    //pass the variables in operate()
 
-    // let arr = display.textContent.split('+')
-    // console.log("display arr:", arr);
+    if (display.textContent != ""){
+        if (!(op2 == 0 && operator == "/")){
+            result = operate(op1, op2, operator);
+            result = Math.round(result * 100) / 100;
+            display.textContent = result;
+        }
+        else {
+            display.textContent = "nice try";
+        }
+    }
+    else{
 
-    // op1 = arr[0];
-    // operand = arr[1];
-    // op2 = arr[2];
-
-    op2 = parseInt(display.textContent);
-    console.log("op2:", op2);
-
-
-    
-
-    result = operate(op1, op2, operator);
-
-    console.log(op1);
-    console.log(op2);
-    console.log(operator);
-    console.log(result);
-    display.textContent = result;
+    }
 });
 clearBtn.addEventListener('click', function(){
     display.textContent = "";
@@ -239,5 +296,3 @@ function operate (a,b,op){
         return console.log("invalid operator");
     }
 }
-
-//FIX can't string operators

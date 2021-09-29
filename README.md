@@ -15,4 +15,4 @@ Version 3
 [x] Make the Calculator work.
 
 Version 4
-[] Users should be able to string together several operations and get the right answer.
+[x] Users should be able to string together several operations and get the right answer.
