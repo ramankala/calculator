@@ -36,6 +36,7 @@ sevenBtn.addEventListener('click', function(){
         flag = false;
     }
     else {
+        display.textContent = "";
         display.textContent += "7";
         op2 = parseInt(display.textContent);
     }
@@ -50,6 +51,7 @@ eightBtn.addEventListener('click', function(){
         flag = false;
     }
     else {
+        display.textContent = "";
         display.textContent += "8";
         op2 = parseInt(display.textContent);
     }
@@ -63,6 +65,7 @@ nineBtn.addEventListener('click', function(){
         flag = false;
     }
     else {
+        display.textContent = "";
         display.textContent += "9";
         op2 = parseInt(display.textContent);
     }
@@ -94,6 +97,7 @@ fourBtn.addEventListener('click', function(){
         flag = false;
     }
     else {
+        display.textContent = "";
         display.textContent += "4";
         op2 = parseInt(display.textContent);
     }
@@ -107,6 +111,7 @@ fiveBtn.addEventListener('click', function(){
         flag = false;
     }
     else {
+        display.textContent = "";
         display.textContent += "5";
         op2 = parseInt(display.textContent);
     }
@@ -120,6 +125,7 @@ sixBtn.addEventListener('click', function(){
         flag = false;
     }
     else {
+        display.textContent = "";
         display.textContent += "6";
         op2 = parseInt(display.textContent);
     }
@@ -151,6 +157,7 @@ oneBtn.addEventListener('click', function(){
         flag = false;
     }
     else {
+        display.textContent = "";
         display.textContent += "1";
         op2 = parseInt(display.textContent);
     }
@@ -164,6 +171,7 @@ twoBtn.addEventListener('click', function(){
         flag = false;
     }
     else {
+        display.textContent = "";
         display.textContent += "2";
         op2 = parseInt(display.textContent);
     }
@@ -177,6 +185,7 @@ threeBtn.addEventListener('click', function(){
         flag = false;
     }
     else {
+        display.textContent = "";
         display.textContent += "3";
         op2 = parseInt(display.textContent);
     }
@@ -208,6 +217,7 @@ zeroBtn.addEventListener('click', function(){
         flag = false;
     }
     else {
+        display.textContent = "";
         display.textContent += "0";
         op2 = parseInt(display.textContent);
     }
