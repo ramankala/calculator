@@ -1,4 +1,4 @@
-const container = document.querySelector('#container');
+const container = document.querySelector('#calculatorContainer');
 
 const display = document.querySelector('#display');
 display.classList.toggle('display');
@@ -20,6 +20,7 @@ const zeroBtn = document.querySelector('#zero');
 const addBtn = document.querySelector('#add');
 const equalBtn = document.querySelector('#equal');
 const clearBtn = document.querySelector('#clear');
+const negativeBtn = document.querySelector('#negative');
 
 let op1;
 let op2;
@@ -259,6 +260,15 @@ clearBtn.addEventListener('click', function(){
 
 });
 
+negativeBtn.addEventListener('click', function(){
+
+    let newVal;
+
+    newVal = negative(display.textContent);
+
+    display.textContent = newVal;
+});
+
 
 
 function add(a, b){
@@ -275,6 +285,9 @@ function multiply(a, b) {
 
 function divide(a,b){
     return a/b;
+}
+function negative(result){
+    return -(result);
 }
 
 function operate (a,b,op){
